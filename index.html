@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria Moderna</title>
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap"
+        rel="stylesheet" />
+
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+
+            <h1 class="logo">Galeria <span>Moderna</span></h1>
+
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Buscar imagens..." autocomplete="off"
+                    aria-label="Buscar imagens" />
+                <button id="searchBtn" class="search-btn" aria-label="Pesquisar">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        aria-hidden="true">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="nav" aria-label="Secoes da galeria">
+                <button class="nav-btn active" id="btnAll">Colecao</button>
+                <button class="nav-btn" id="btnFav">Favoritos</button>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="hero" aria-label="Apresentacao">
+
+        <p class="hero-eyebrow">Uma curadoria de luz &amp; forma</p>
+        <h2 class="hero-title">A beleza do<br><em>mundo em imagens</em></h2>
+        <div class="hero-divider"></div>
+        <p class="hero-text">Busque imagens de diferentes categorias</p>
+
+        <div class="categories" role="group" aria-label="Categorias de busca">
+            <button class="tag active" data-query="nature">Natureza</button>
+            <button class="tag" data-query="architecture">Arquitetura</button>
+            <button class="tag" data-query="people">Pessoas</button>
+            <button class="tag" data-query="abstract">Abstrato</button>
+            <button class="tag" data-query="cityscape">Cidade</button>
+            <button class="tag" data-query="minimal">Minimalismo</button>
+        </div>
+
+    </section>
+
+    <div class="status" aria-live="polite">
+        <p class="status-text" id="statusText">Explorando a colecao...</p>
+        <p class="status-count" id="statusCount"></p>
+    </div>
+
+
+    <main class="gallery">
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+
+        <div class="loader" id="loader" aria-label="Carregando" aria-hidden="true">
+            <span class="loader-dot"></span>
+            <span class="loader-dot"></span>
+            <span class="loader-dot"></span>
+        </div>
+
+        <div class="empty-state" id="emptyState" aria-hidden="true">
+            <span class="empty-icon" aria-hidden="true">O</span>
+            <p>Nenhuma obra encontrada para esta busca.</p>
+        </div>
+
+    </main>
+
+    <div class="load-more-wrap" id="loadMoreWrap">
+        <button class="btn-outline" id="loadMoreBtn">Mais obras</button>
+    </div>
+
+    <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+        aria-hidden="true">
+        <article class="modal">
+
+            <div class="modal-image">
+                <img id="modalImg" src="" alt="" />
+                <button class="modal-close" id="modalClose" aria-label="Fechar modal">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="modal-info">
+
+                <div class="modal-info-top">
+                    <p class="modal-eyebrow" id="modalEyebrow"></p>
+                    <h2 class="modal-title" id="modalTitle">-</h2>
+                    <p class="modal-desc" id="modalDesc"></p>
+                    <div class="modal-author">
+                        <span class="modal-author-label">Fotografo</span>
+                        <span class="modal-author-name" id="modalAuthor"></span>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn-outline" id="modalFavBtn">Favoritar</button>
+                    <a id="modalLink" href="#" target="_blank" rel="noopener" class="btn-outline btn-link">
+                        Ver original
+                    </a>
+                </div>
+
+            </div>
+
+        </article>
+    </div>
+
+    <div class="toast" id="toast" aria-live="assertive" aria-atomic="true"></div>
+
+    <footer class="footer">
+        <p class="footer-title">Galeria Moderna</p>
+        <p class="footer-credit">
+            Imagens por <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>

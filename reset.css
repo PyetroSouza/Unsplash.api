@@ -1,0 +1,45 @@
+:root {
+  --cream: #F5F0E8;
+  --off-white: #FAF8F4;
+  --warm-gray: #C8C0B4;
+  --stone: #9E9488;
+  --umber: #6B5F52;
+  --ink: #2A2520;
+  --terracotta: #B87A5A;
+  --gold: #C9A96E;
+  --white: #FEFCFA;
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', sans-serif;
+
+  --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
